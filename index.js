@@ -7,6 +7,12 @@ const app = express();
 const v1MessageRouter = require("./v1/routes/messageRoutes");
 const { swaggerDocs: V1SwaggerDocs } = require("./v1/swagger");
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+  });
+
 let corsOptions = {
   origin: 'http://localhost:5000',
 }
@@ -14,12 +20,6 @@ let corsOptions = {
 app.use(bodyParser.json());
 app.use("/api/v1/messages", v1MessageRouter);
 app.use(express.static('public'))
-
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
-  next();
-  });
 
 app.get('/', (req, res) => {
   res.sendFile('index.html', {root: path.join(__dirname, 'public')});
