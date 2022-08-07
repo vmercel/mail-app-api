@@ -81,6 +81,13 @@
       "dateOfBirth": "08/04/1993",
       "email": "greg@mail dot com",
       "password": "a6dcde7eceb689142f21a1e30b5fdb868ec4cd25d5537d67ac7e8c7816b0e862"
+    },
+       {
+        "id": 123456789,
+        "subject": "No New Msg",
+        "content": "Your Inbox is empty. You will be notified when a new message is received. ",
+        "isRead": true,
+        "owner": "Undefined"
     }
   ],
 
