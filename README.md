@@ -1,4 +1,4 @@
-# MBL mail app API by Mercel
+# mail app API
 
 ## Available Scripts
 
